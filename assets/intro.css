@@ -1,0 +1,152 @@
+body {
+    font-family: 'VT323', monospace;
+    overflow: hidden;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+
+    /* ▼▼▼ TAMBAHAN UNTUK BACKGROUND ANIMASI ▼▼▼ */
+    background-color: #000000; 
+    background-image:
+        radial-gradient(white, rgba(255, 255, 255, 0) 2px, transparent 30px),
+        radial-gradient(white, rgba(255, 255, 255, 0) 1.5px, transparent 20px),
+        radial-gradient(white, rgba(255, 255, 255, 0) 1px, transparent 10px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    animation: move-stars 200s linear infinite;
+}
+
+/* Animasi untuk menggerakkan latar belakang bintang */
+@keyframes move-stars {
+    from {
+        background-position: 0 0, 40px 60px, 130px 270px;
+    }
+    to   {
+        background-position: -10000px 5000px, -10000px 5000px, -10000px 5000px;
+    }
+}
+
+
+/* === BAGIAN LANDING PAGE (RESPONSIF) === */
+.landing-container {
+    text-align: center;
+}
+
+.title-glow {
+    /* Ukuran default untuk HP */
+    font-size: 3.5rem; /* 56px */
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    text-shadow: 0 0 15px rgba(20, 210, 255, 0.4), 0 0 25px rgba(20, 210, 255, 0.3);
+}
+
+.landing-container p {
+    /* Ukuran default untuk HP */
+    font-size: 1.25rem; /* 20px */
+    color: #94a3b8; /* slate-400 */
+    margin-top: 1rem;
+}
+
+.start-button {
+    /* Ukuran default untuk HP */
+    display: inline-block;
+    margin-top: 2.5rem;
+    padding: 1rem 2rem;
+    background-color: #22d3ee; /* cyan-400 */
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.25rem; /* 20px */
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+.start-button:hover {
+    background-color: #67e8f9; /* cyan-300 */
+    transform: scale(1.05);
+}
+
+/* === BAGIAN ANIMASI (RESPONSIF) === */
+#animation-container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.scene-text {
+    /* Ukuran default untuk HP */
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.3;
+    min-height: 120px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+}
+.scene-text.visible {
+    opacity: 1;
+}
+
+/* --- (Style lain tidak berubah) --- */
+.scene-image { height: 150px; opacity: 0; transition: opacity 1s ease-in-out; margin: 2rem auto; max-width: 100%; }
+.scene-image.visible { opacity: 1; }
+.continue-button { display: inline-block; margin-top: 2rem; padding: 0.75rem 2rem; font-size: 1.5rem; color: #fff; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 0.5rem; text-decoration: none; transition: background-color 0.3s; opacity: 0; animation: fadeIn 1s ease-in-out 1s forwards; }
+.continue-button:hover { background: rgba(255, 255, 255, 0.2); }
+.skip-button { position: fixed; top: 1.25rem; right: 1.25rem; z-index: 20; padding: 0.5rem 1.25rem; background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); backdrop-filter: blur(4px); color: white; font-weight: 600; border-radius: 0.5rem; text-decoration: none; font-size: 1.125rem; transition: background-color 0.2s; }
+.skip-button:hover { background-color: rgba(255, 255, 255, 0.2); }
+.hidden { display: none; }
+.scanline-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; background: linear-gradient( to bottom, rgba(20, 20, 20, 0) 50%, rgba(0, 0, 0, 0.25) 50% ); background-size: 100% 4px; animation: scan 10s linear infinite; z-index: 10; }
+@keyframes scan { from { background-position: 0 0; } to { background-position: 0 -100px; } }
+.typed-cursor { font-size: 2rem; opacity: 1; animation: typedjsBlink 0.7s infinite; }
+@keyframes typedjsBlink { 50% { opacity: 0.0; } }
+@keyframes fadeIn { to { opacity: 1; } }
+
+
+/* --- ATURAN RESPONSIVE UNTUK LAYAR LEBIH BESAR --- */
+@media (min-width: 768px) {
+    .title-glow {
+        font-size: 6rem; /* Kembalikan ke ukuran besar */
+    }
+
+    .landing-container p {
+        font-size: 1.5rem; /* Kembalikan ke ukuran besar */
+    }
+
+    .start-button {
+        padding: 1.25rem 3rem;
+        font-size: 1.5rem; /* Kembalikan ke ukuran besar */
+    }
+    
+    .scene-text {
+        font-size: 2rem; /* Kembalikan ke ukuran besar */
+        min-height: 80px;
+    }
+}
+
+/* Style untuk bintang di awal animasi */
+#pre-animation-stars {
+    font-size: 5rem;
+    min-height: 120px; /* Menjaga konsistensi layout */
+    width: 100%;       /* Mengambil lebar penuh dari kontainer */
+
+    /* ▼▼▼ KUNCI UNTUK POSISI TENGAH YANG PRESISI ▼▼▼ */
+    display: flex;
+    align-items: center;     /* Tengah secara vertikal */
+    justify-content: center; /* Tengah secara horizontal */
+
+    /* Animasi (tidak berubah) */
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: steps(2, start);
+    animation-iteration-count: 3;
+    animation-fill-mode: forwards; /* Agar tetap hilang setelah selesai */
+}
+
+/* Animasi untuk kelap-kelip (blink) */
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}

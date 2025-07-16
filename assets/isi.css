@@ -1,0 +1,127 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #020617; /* slate-950 */
+    color: #e2e8f0; /* slate-200 */
+}
+
+/* Skema warna kustom Tailwind (untuk referensi, karena kelas ini sudah ada di HTML) */
+.bg-slate-950 { background-color: #020617; }
+.bg-slate-900 { background-color: #0f172a; }
+.bg-slate-800 { background-color: #1e293b; }
+.text-cyan-400 { color: #22d3ee; }
+.border-cyan-400 { border-color: #22d3ee; }
+.ring-cyan-400 { --tw-ring-color: #22d3ee; }
+.hover\:bg-cyan-500:hover { background-color: #06b6d4; }
+.hover\:border-cyan-300:hover { border-color: #67e8f9; }
+
+/* Styling untuk animasi saat scroll (AOS - Animate On Scroll) */
+[data-aos] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-aos].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styling untuk accordion FAQ */
+.faq-question::after {
+    content: '\25BC'; /* unicode untuk panah ke bawah */
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-question::after {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+/* [PERBAIKAN] Mengubah max-height agar tidak memotong teks yang panjang */
+ .faq-item.open .faq-answer {
+    max-height: 1000px; /* Tinggi maksimal yang lebih besar untuk menampung jawaban panjang */
+    padding-top: 1rem;
+}
+
+/* Styling untuk accordion Course Outline BARU */
+.outline-item.open .arrow {
+    transform: rotate(180deg);
+}
+
+.outline-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.outline-item.open .outline-answer {
+    max-height: 500px; /* Tinggi maksimal saat terbuka, sesuaikan jika perlu */
+    padding: 0 1.25rem 1.25rem 1.25rem; /* padding: 0 p-5 p-5 p-5 */
+    opacity: 1;
+}
+
+/* Styling untuk Progress Bar BARU */
+.progress-bar-inner {
+    transition: width 1.5s ease-in-out;
+    width: 0%; /* Lebar awal sebelum dianimasikan oleh JS */
+}
+
+/* --- [REVISI FINAL] KODE UNTUK EFEK 3D TRANSPARAN --- */
+
+/* Styling untuk Kartu Harga */
+.pricing-card {
+    background-color: rgba(15, 23, 42, 0.6); 
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    transform-style: preserve-3d;
+    
+    /* [REVISI] Menambahkan transisi untuk box-shadow agar lebih halus */
+    transition: transform 0.1s ease, box-shadow 0.3s ease;
+    
+    /* [BARU] Menambahkan shadow awal yang sangat subtil */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Shadow gelap yang lembut */
+}
+
+/* [BARU] Menambahkan efek shadow yang lebih kuat saat mouse diarahkan ke kartu */
+.pricing-card:hover {
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.25); /* Shadow cyan yang lembut saat hover */
+}
+
+.pricing-card .card-content {
+    transform: translateZ(40px);
+}
+
+/* Menjaga border highlight untuk kartu populer dan memberinya shadow permanen */
+.pricing-card.border-cyan-400 {
+    border: 2px solid #22d3ee;
+    /* [BARU] Memberikan shadow pendaran cyan permanen yang lebih kuat pada kartu populer */
+    box-shadow: 0 0 40px rgba(34, 211, 238, 0.2);
+}
+
+/* [BARU] Meningkatkan shadow pada kartu populer saat di-hover */
+.pricing-card.border-cyan-400:hover {
+     box-shadow: 0 0 50px rgba(34, 211, 238, 0.4);
+}
+
+/* Styling untuk Kartu FAQ */
+.faq-card {
+    background-color: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.faq-card:hover {
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.15);
+}
+
+.faq-card .card-content {
+    transform: translateZ(20px); /* Efek parallax lebih subtil untuk FAQ */
+}

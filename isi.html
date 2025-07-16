@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trisenpai Bootcamp - Kuasai Pemrograman C dari Dasar</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+
+    <link rel="stylesheet" href="assets/isi.css">
+</head>
+<body class="bg-slate-950">
+
+    <header id="navbar" class="bg-slate-950/70 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-800">
+        <nav class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <span class="text-2xl font-bold text-white">Trisenpai</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#keunggulan" class="smooth-scroll text-slate-300 hover:text-cyan-400 transition-colors">Keunggulan</a>
+                <a href="#materi" class="smooth-scroll text-slate-300 hover:text-cyan-400 transition-colors">Materi</a>
+                <a href="#harga" class="smooth-scroll text-slate-300 hover:text-cyan-400 transition-colors">Harga</a>
+                <a href="#tentang-kami" class="smooth-scroll text-slate-300 hover:text-cyan-400 transition-colors">Tentang Kami</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                 <a href="#harga" class="smooth-scroll bg-cyan-400 text-slate-900 font-semibold px-5 py-2 rounded-lg hover:bg-cyan-500 transition-all transform hover:scale-105">
+                    Daftar Sekarang
+                </a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-2">
+            <a href="#keunggulan" class="smooth-scroll block text-slate-300 hover:text-cyan-400 transition-colors py-2">Keunggulan</a>
+            <a href="#materi" class="smooth-scroll block text-slate-300 hover:text-cyan-400 transition-colors py-2">Materi</a>
+            <a href="#harga" class="smooth-scroll block text-slate-300 hover:text-cyan-400 transition-colors py-2">Harga</a>
+            <a href="#tentang-kami" class="smooth-scroll block text-slate-300 hover:text-cyan-400 transition-colors py-2">Tentang Kami</a>
+            <div class="border-t border-slate-700 pt-4 space-y-2">
+                <a href="login.html" class="block text-center bg-slate-800 text-white font-semibold px-5 py-2 rounded-lg hover:bg-slate-700 transition-colors">Login</a>
+                <a href="#harga" class="smooth-scroll block w-full text-center bg-cyan-400 text-slate-900 font-semibold px-5 py-2 mt-2 rounded-lg hover:bg-cyan-500 transition-colors">
+                    Daftar Sekarang
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+            <canvas id="bg-canvas" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+            <div class="relative z-10 container mx-auto px-4 md:px-6 text-center">
+                <div data-aos>
+                    <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                        Kuasai Fondasi Logika & Algoritma dengan <span class="text-cyan-400">Bahasa C</span>
+                    </h1>
+                    <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+                        Bootcamp intensif yang dirancang untuk mengubah Anda dari pemula menjadi programmer C yang kompeten, siap membangun software yang efisien dan andal.
+                    </p>
+                    <a href="#harga" class="smooth-scroll bg-cyan-400 text-slate-900 font-bold text-lg px-8 py-4 rounded-lg hover:bg-cyan-500 transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/20">
+                        Lihat Paket Harga
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="keunggulan" class="py-16 md:py-20 bg-slate-900">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-12" data-aos>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Kenapa Belajar di <span class="text-cyan-400">Trisenpai</span>?</h2>
+                    <p class="text-slate-400 mt-2 max-w-2xl mx-auto">Kami tidak hanya mengajar sintaks, kami membangun pola pikir seorang problem-solver.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition-colors" data-aos>
+                        <div class="bg-cyan-400/10 text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Mentor Kakak Tingkat</h3>
+                        <p class="text-slate-400">Belajar dari sesama mahasiswa yang baru saja melewati mata kuliah ini dengan nilai terbaik.</p>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition-colors" data-aos data-aos-delay="100">
+                         <div class="bg-cyan-400/10 text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Kurikulum Relevan</h3>
+                        <p class="text-slate-400">Fokus pada materi dan tantangan yang akan kamu hadapi langsung di perkuliahan.</p>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition-colors" data-aos data-aos-delay="200">
+                         <div class="bg-cyan-400/10 text-cyan-400 rounded-lg w-12 h-12 flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Tips & Trik Kuliah</h3>
+                        <p class="text-slate-400">Dapatkan strategi belajar, cara mengerjakan tugas, dan persiapan ujian dari yang berpengalaman.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="materi" class="py-16 md:py-20">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-12" data-aos>
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Detail Kurikulum (Course Outline)</h2>
+            <p class="text-slate-400 mt-2 max-w-2xl mx-auto">Setiap sesi dirancang untuk membangun pemahaman kalian secara bertahap, biar sesuai dengan pelajaran di kuliah</p>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-3" data-aos>
+
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 1: Introduction to C Programming</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 9 September 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>C Standard Library</li>
+                        <li>C Structure</li>
+                        <li>Comments</li>
+                        <li>Escape Sequences</li>
+                        <li>Variables and data types</li>
+                        <li>Type Casting</li>
+                        <li>Input/Output Formatting</li>
+                        <li>ASCII Values</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 2: Operators</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 11 September 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>Operator and operand introduction</li>
+                        <li>Assignment Operators</li>
+                        <li>Arithmetic Operators</li>
+                        <li>Relational Operators</li>
+                        <li>Logical Operators</li>
+                        <li>Bitwise Operators</li>
+                        <li>Shorthand Operators</li>
+                        <li>Pointer Operators</li>
+                        <li>Precedence and associative</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 3: Selection</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 13 September 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>If-else statement</li>
+                        <li>Nested if</li>
+                        <li>Switch Case</li>
+                        <li>Ternary Operator</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 4: Repetition</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 16 September 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>For loop</li>
+                        <li>While loop</li>
+                        <li>Do-while loop</li>
+                        <li>Nested Loop</li>
+                        <li>Break and Continue</li>
+                        <li>Pattern Printing</li>
+                        <li>Test Cases</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 5: String Manipulation</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 18 September 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>String.h library</li>
+                        <li>String Validation</li>
+                        <li>Length of string</li>
+                        <li>Copy String</li>
+                        <li>Comparing String (Case Sensitive, and Incase Sensitive)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 6: Pointer and Array</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 20 September 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>Pointer Concept</li>
+                        <li>1D, 2D, 3D, ... Arrays</li>
+                        <li>String manipulation with an Array</li>
+                        <li>Pattern Printing with Array</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 7: Midterm Exam Simulation</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 23 September 2024 (18:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>Solving Previous Midterm Exam Challenges and Problems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 8: Midterm Exam Evaluation</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 25 September 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>Evaluating Exam Problems</li>
+                        <li>Correcting Common Errors</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 9: Function</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 27 September 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>Function Definition</li>
+                        <li>Function Structure</li>
+                        <li>Function Prototype</li>
+                        <li>Local and Global Identifier</li>
+                        <li>Passing By Value</li>
+                        <li>Passing By Reference</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 10: Recursion</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 30 September 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>Recursion Definition</li>
+                        <li>Recursive Function</li>
+                        <li>Iterative vs Recursive</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 11: Structures</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 2 Oktober 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>Struct Definition</li>
+                        <li>Nested Struct</li>
+                        <li>Typedef</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 12: File Processing</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 4 Oktober 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>File Definition</li>
+                        <li>Open File</li>
+                        <li>Close File</li>
+                        <li>Input and Output File</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 13: Sorting-I</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 7 Oktober 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>Bubble Sort</li>
+                        <li>Selection Sort</li>
+                        <li>Insertion Sort</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 14: Sorting-II</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 9 Oktober 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>Quick Sort</li>
+                        <li>Merge Sort</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 15: Searching</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 11 Oktober 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>Linear Search</li>
+                        <li>Binary Search</li>
+                        <li>Interpolation Search</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 16: Final Exam Simulation</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 14 Oktober 2024 (18:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>Solving Previous Final Term Exam Challenges and Problems</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="outline-item bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
+                <button class="outline-question w-full flex justify-between items-center text-left p-5">
+                    <span class="font-semibold text-lg text-white">Sesi 17: Final Exam Evaluation</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow text-cyan-400 transition-transform"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="outline-answer">
+                    <p class="text-slate-400 mb-3 font-medium">Jadwal: 16 Oktober 2024 (19:00 - 21:00)</p>
+                    <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                        <li>Evaluating Exam Problems</li>
+                        <li>Correcting Common Errors</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <section id="harga" class="py-16 md:py-20 bg-slate-900">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-12" data-aos>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Pilih Paket Belajar Anda</h2>
+                    <p class="text-slate-400 mt-2">Belajar bareng teman lebih seru dan hemat!</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center max-w-5xl mx-auto">
+                    
+                    <div class="pricing-card rounded-2xl p-8 h-full flex flex-col" data-aos>
+                        <div class="card-content">
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white">Solo</h3>
+                                        <p class="text-slate-400">Paket jomblo.</p>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                </div>
+                                <div class="text-left my-8">   
+                                    <span class="text-5xl font-extrabold text-white">Rp 150.000</span>
+                                </div>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center text-slate-400"><svg class="w-5 h-5 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>No discount</li>
+                                    <li class="flex items-center text-slate-300"><svg class="w-5 h-5 text-cyan-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Rp 150.000 / Individual</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="pricing-card rounded-2xl p-8 border-2 border-cyan-400 shadow-2xl shadow-cyan-500/20 relative" data-aos data-aos-delay="100">
+                        <div class="card-content">
+                            <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
+                                <span class="bg-cyan-400 text-slate-900 text-xs font-bold px-4 py-1 rounded-full uppercase">Populer</span>
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white">Duo</h3>
+                                        <p class="text-slate-400">Paket Bucin.</p>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                </div>
+                                 <div class="text-left my-8">
+                                    <span class="text-5xl font-extrabold text-white">Rp 280.000</span>
+                                </div>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center text-slate-300"><svg class="w-5 h-5 text-cyan-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Discount Rp 20.000,-</li>
+                                    <li class="flex items-center text-slate-300"><svg class="w-5 h-5 text-cyan-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Rp 140.000 / Individuals</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="pricing-card rounded-2xl p-8 h-full flex flex-col" data-aos data-aos-delay="200">
+                        <div class="card-content">
+                            <div class="flex-grow">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-white">Trio</h3>
+                                        <p class="text-slate-400">Paket keluarga mesra.</p>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.3.0-3.08S5.21 15.66 4.5 16.5z"></path><path d="m12 15-3-3a9 9 0 0 1 3-13 9 9 0 0 1 13 3l-3 3a9 9 0 0 1-13 3z"></path><path d="m22 2-3 3"></path><path d="M16.5 7.5c.71.84.7 2.3.0-3.08s-2.24.84-3.08.0-2.3-.7-3.08-.0c-.84.7-.84 2.24.0 3.08.84.7 2.3.7 3.08.0"></path></svg>
+                                </div>
+                                 <div class="text-left my-8">
+                                    <span class="text-5xl font-extrabold text-white">Rp 400.000</span>
+                                </div>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center text-slate-300"><svg class="w-5 h-5 text-cyan-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Discount Rp 50.000,-</li>
+                                    <li class="flex items-center text-slate-300"><svg class="w-5 h-5 text-cyan-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Rp 133.000 / Individuals</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <a href="https://docs.google.com/forms/d/1e40EflpatCv4_tE7MGhmumA00PPCq35v4uVdOCMA4Q4/viewform?ts=686a53b1&edit_requested=true&fbzx=6977523915399944338" class="pricing-card rounded-2xl p-8 border-2 border-cyan-400 shadow-2xl shadow-cyan-500/20 data-aos data-aos-delay=100 mt-10 w-1/4 p-8 mx-auto block text-center pricing-card rounded-2xl bg-slate-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-slate-600 transition-colors p-8 border-2 border-cyan-400 shadow-2xl shadow-cyan-500/20 relative hover:scale-105">
+                Register Now
+            </a>
+        </section>
+        
+        <section id="tentang-kami" class="py-16 md:py-20">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-12" data-aos>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Belajar dari Mereka yang Paling Mengerti</h2>
+                    <p class="text-slate-400 mt-2 max-w-2xl mx-auto">Dibimbing langsung oleh kakak tingkat berprestasi yang baru saja menaklukkan mata kuliah ini.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-slate-800 rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 border border-slate-700" data-aos>
+                    <div class="md:w-1/3 text-center flex-shrink-0">
+                        <div class="relative inline-block bg-slate-700 rounded-full p-2">
+                             <div class="w-32 h-32 rounded-full bg-slate-900 flex items-center justify-center flex-col">
+                                <span class="text-4xl font-extrabold text-cyan-400">3.95+</span>
+                                <span class="text-sm font-semibold text-white mt-1">IPK</span>
+                             </div>
+                        </div>
+                         <h3 class="text-xl font-bold text-white mt-4">Akademik Unggul</h3>
+                         <p class="text-sm text-slate-400">Mahasiswa Berprestasi</p>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-slate-300 text-lg mb-4">
+                           Di Algorithm, kami percaya metode belajar terbaik datang dari mereka yang paling dekat dengan perjuangan Anda: <strong>sesama mahasiswa</strong>. Tim instruktur kami adalah kakak tingkat Anda, para mahasiswa berprestasi dengan Indeks Prestasi Kumulatif (IPK) di atas 3.95.
+                        </p>
+                        <p class="text-slate-400">
+                           Karena kami baru saja melewati mata kuliah ini, kami paham betul setiap tantangan, kebingungan, serta tips dan trik untuk menaklukkannya. Ini bukan sekadar mengajar; ini adalah sesi mentoring di mana kami berbagi pemahaman mendalam dan semangat belajar dengan cara yang relevan dan mudah dicerna oleh maba.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-16 md:py-20 bg-slate-900">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="text-center mb-12" data-aos>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Tanya Jawab</h2>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-4" data-aos>
+                    
+                    <div class="faq-card faq-item rounded-2xl p-6">
+                        <div class="card-content">
+                            <button class="faq-question w-full text-left font-semibold text-white text-lg">
+                                Algorithm and Programming itu apa sih?
+                            </button>
+                            <div class="faq-answer text-slate-300">
+                                <p>Algorithm and Programming merupakan salah satu mata kuliah wajib yang ada di Fakultas School of Computer Science di Binus. Jadi untuk setiap penjurusannya akan mendapatkan mata kuliah ini di semester 1.</p>
+                                <br>Intinya:<p>Algorithm itu adalah langkah-langkah sistematis untuk menyelesaikan masalah</p></br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-card faq-item rounded-2xl p-6">
+                        <div class="card-content">
+                            <button class="faq-question w-full text-left font-semibold text-white text-lg">
+                                Saya perlu pengalaman koding gak, untuk mengikuti Bootcamp ini?
+                            </button>
+                            <div class="faq-answer text-slate-300">
+                                <p>Engga kok...ヾ(●ω●)ノ</p>
+                                Karena dengan adanya Bootcamp inilah kami bakal ajarin kalian dari yang gatau apa apa tentang koding, bahkan kalau gatau pakai komputer juga kami ajarin sampai bisa ԅ(‾⌣‾ԅ), jadi kalian gak perlu khawatir, kalau kalian niat pasti bisa kok ¯\_( ͡~ ͜ʖ ͡°)_/¯.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card faq-item rounded-2xl p-6">
+                        <div class="card-content">
+                            <button class="faq-question w-full text-left font-semibold text-white text-lg">
+                                Bootcampnya bakal nabrak jam kuliah gak? terus mulainya kapan?
+                            </button>
+                            <div class="faq-answer text-slate-300">
+                                <p>Straight to the point -> NO</p>
+                                Karena pada dasarnya Bootcamp ini dirancang untuk menghindari bentrokan dengan jadwal kuliah, lagipula Bootcamp ini juga dimulai sebelum masuk kuliah (which is 9 september). Jadi kita bakal mulai sesi pembelajaran pada tanggal 14 Juli - bla bla, di jam 7 malam (19.00)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-card faq-item rounded-2xl p-6">
+                        <div class="card-content">
+                            <button class="faq-question w-full text-left font-semibold text-white text-lg">
+                                Software apa yang perlu saya siapkan?
+                            </button>
+                            <div class="faq-answer text-slate-300">
+                                Kalian cuma perlu teks editor (seperti VS Code) dan C compiler (seperti GCC/MinGW). Kami bakal kasih panduan instalasi lengkap di awal bootcamp kok tenang aja (´∩｡• ᵕ •｡∩`) ♡.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="faq-card faq-item rounded-2xl p-6">
+                        <div class="card-content">
+                            <button class="faq-question w-full text-left font-semibold text-white text-lg">
+                                Nanti Quiz, UTS, dan UASnya gimana?
+                            </button>
+                            <div class="faq-answer text-slate-300">
+                                bla bla bla
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <section id="kontak" class="py-16 md:py-20">
+            <div class="container mx-auto px-4 md:px-6 text-center" data-aos>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Mau nanya nanya?</h2>
+                <p class="text-slate-400 mt-2 mb-8 max-w-2xl mx-auto">Bisa langsung chat aja yaa</p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    
+                    <!-- [REVISI] Menambahkan kelas animated-border-button -->
+                    <a href="#" target="_blank" 
+                       class="animated-border-button inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-indigo-500 text-white font-bold px-6 py-3 rounded-lg hover:bg-indigo-600 transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/20">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.482a20.15 20.15 0 00-4.651-1.221c-.26-.03-.526.05-.722.233l-.01.011c-.516.483-1.021 1.05-1.488 1.666a18.84 18.84 0 00-5.01 0 16.3 16.3 0 00-1.488-1.666l-.01-.011a1.05 1.05 0 00-.722-.233 20.15 20.15 0 00-4.65 1.221 1.05 1.05 0 00-.652.973c.003.11.01.22.02.33l.002.012c.118 1.693.633 6.131 4.223 9.48a1.05 1.05 0 00.86.333c.26-.002.51-.09.706-.245l.01-.008c.55-.423 1.05-0.89 1.488-1.39a1.05 1.05 0 011.232 0c.438.5 1.002 1.03 1.488 1.39l.01.008c.195.155.446.243.706.245a1.05 1.05 0 00.86-.332c3.59-3.35 4.105-7.787 4.223-9.48l.002-.012a.99.99 0 00.02-.33 1.05 1.05 0 00-.652-.973zM8.433 12.448c-.825 0-1.49-.737-1.49-1.646s.665-1.646 1.49-1.646c.825 0 1.49.737 1.49 1.646s-.665 1.646-1.49 1.646zm7.134 0c-.825 0-1.49-.737-1.49-1.646s.665-1.646 1.49-1.646c.825 0 1.49.737 1.49 1.646.001.909-.664 1.646-1.49 1.646z"></path></svg>
+                        Gabung Discord
+                    </a>
+                    
+                    <!-- [REVISI] Mengganti SVG dan menambahkan kelas animated-border-button -->
+                    <a href="https://wa.me/6281372529119?text=Halo,%20saya%20tertarik%20mendaftar%20bootcamp." 
+                       target="_blank" 
+                       class="animated-border-button inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-green-500 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg shadow-green-500/20">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.425 5.575a9.925 9.925 0 00-14.036 14.036A9.925 9.925 0 0018.425 5.575zM21.53 2.47a14.176 14.176 0 00-20.06 20.06 14.176 14.176 0 0020.06-20.06z" clip-rule="evenodd"></path><path d="M12 5.918a6.082 6.082 0 00-6.082 6.082c0 1.62.64 3.09 1.694 4.186l-1.12 2.054a.5.5 0 00.668.668l2.054-1.12A6.063 6.063 0 0012 18.082a6.082 6.082 0 000-12.164zm-1.14 7.643l.118.07c.54.324 1.12.492 1.716.492.208 0 .414-.023.616-.07.41-.097.79-.28 1.114-.533 1.14-1.14 1.14-3 0-4.14-1.14-1.14-3-1.14-4.14 0-1.14 1.14-1.14 3 0 4.14.324.324.704.537 1.114.643a3.54 3.54 0 00.562.097z"></path></svg>
+                        Jessen
+                    </a>
+                    
+                    <!-- [REVISI] Mengganti SVG dan menambahkan kelas animated-border-button -->
+                    <a href="https://wa.me/62895344018145?text=Halo,%20saya%20tertarik%20mendaftar%20bootcamp." 
+                       target="_blank" 
+                       class="animated-border-button inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-green-500 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg shadow-green-500/20">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.425 5.575a9.925 9.925 0 00-14.036 14.036A9.925 9.925 0 0018.425 5.575zM21.53 2.47a14.176 14.176 0 00-20.06 20.06 14.176 14.176 0 0020.06-20.06z" clip-rule="evenodd"></path><path d="M12 5.918a6.082 6.082 0 00-6.082 6.082c0 1.62.64 3.09 1.694 4.186l-1.12 2.054a.5.5 0 00.668.668l2.054-1.12A6.063 6.063 0 0012 18.082a6.082 6.082 0 000-12.164zm-1.14 7.643l.118.07c.54.324 1.12.492 1.716.492.208 0 .414-.023.616-.07.41-.097.79-.28 1.114-.533 1.14-1.14 1.14-3 0-4.14-1.14-1.14-3-1.14-4.14 0-1.14 1.14-1.14 3 0 4.14.324.324.704.537 1.114.643a3.54 3.54 0 00.562.097z"></path></svg>
+                        Sebastian
+                    </a>
+
+                    <a href="https://wa.me/6282362592002?text=Halo,%20saya%20tertarik%20mendaftar%20bootcamp." 
+                       target="_blank" 
+                       class="animated-border-button inline-flex items-center justify-center gap-3 w-full sm:w-auto bg-green-500 text-white font-bold px-6 py-3 rounded-lg hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg shadow-green-500/20">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.425 5.575a9.925 9.925 0 00-14.036 14.036A9.925 9.925 0 0018.425 5.575zM21.53 2.47a14.176 14.176 0 00-20.06 20.06 14.176 14.176 0 0020.06-20.06z" clip-rule="evenodd"></path><path d="M12 5.918a6.082 6.082 0 00-6.082 6.082c0 1.62.64 3.09 1.694 4.186l-1.12 2.054a.5.5 0 00.668.668l2.054-1.12A6.063 6.063 0 0012 18.082a6.082 6.082 0 000-12.164zm-1.14 7.643l.118.07c.54.324 1.12.492 1.716.492.208 0 .414-.023.616-.07.41-.097.79-.28 1.114-.533 1.14-1.14 1.14-3 0-4.14-1.14-1.14-3-1.14-4.14 0-1.14 1.14-1.14 3 0 4.14.324.324.704.537 1.114.643a3.54 3.54 0 00.562.097z"></path></svg>
+                        Kenrick
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                     <a href="#" class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        <span class="text-xl font-bold text-white">Trisenpai</span>
+                    </a>
+                </div>
+                <div class="text-slate-400 text-center">
+                    &copy; Trisenpai Algorithm and Programming Bootcamp
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/isi.js" defer></script>
+
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+
+    <!-- <script>
+      AOS.init();
+    </script> -->
+</body>
+</html>
