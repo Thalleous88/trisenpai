@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return new Promise(resolve => {
             new Typed(elementId, {
                 strings: [text],
-                typeSpeed: 50,
+                typeSpeed: 30,
                 showCursor: true,
                 cursorChar: '_',
                 onComplete: (self) => {
