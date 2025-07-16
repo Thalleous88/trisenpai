@@ -125,3 +125,62 @@ body {
 .faq-card .card-content {
     transform: translateZ(20px); /* Efek parallax lebih subtil untuk FAQ */
 }
+
+.contact-button {
+    background-color: rgba(30, 41, 59, 0.4);
+    border: 1px solid #334155;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.7s ease-in-out;
+}
+
+.contact-button svg {
+    transition: all 0.3s ease-in-out;
+    fill: #cbd5e1; 
+}
+
+.contact-button:hover {
+    transform: translateY(-3px) scale(1.03);
+    color: #ffffff; 
+}
+
+.contact-button:hover::before {
+    left: 125%;
+}
+
+.contact-button:hover svg {
+    transform: scale(1.1);
+}
+
+.contact-button.discord-button:hover {
+    border-color: #5865F2; 
+    box-shadow: 0 0 25px rgba(88, 101, 242, 0.6);
+}
+
+.contact-button.discord-button:hover svg {
+    filter: drop-shadow(0 0 10px rgba(88, 101, 242, 0.8));
+    fill: #5865F2;
+}
+
+.contact-button.whatsapp-button:hover {
+    border-color: #25D366; 
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
+}
+
+.contact-button.whatsapp-button:hover svg {
+    filter: drop-shadow(0 0 10px rgba(37, 211, 102, 0.8));
+    fill: #25D366;
+}
